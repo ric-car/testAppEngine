@@ -2,7 +2,7 @@
 Primary API route endpoints
 
 """
-import requests
+from google.appengine.api.urlfetch import Fetch
 from fastapi import APIRouter
 from starlette.responses import RedirectResponse
 
