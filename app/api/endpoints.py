@@ -2,13 +2,14 @@
 Primary API route endpoints
 
 """
-from google.appengine.api.urlfetch import Fetch, GET
 from fastapi import APIRouter
 from starlette.responses import RedirectResponse
+from google.auth.transport import requests
+
 
 # Init FastAPI router for API endpoints
 api_routes = APIRouter()
-
+firebase_request_adapter = requests.Request()
 
 @api_routes.get('/')
 def redirect_to_docs():
@@ -18,5 +19,5 @@ def redirect_to_docs():
 
 @api_routes.get('/hello/{name}')
 async def get_hello(name: str = 'world')-> dict:
-    response = Fetch('https://httpbin.org/basic-auth/user/pass',method=GET)
+    response = requests.get('https://httpbin.org/basic-auth/user/pass')
     return dict(hello=name,code=response.status_code,content=response.content)
