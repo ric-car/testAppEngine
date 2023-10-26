@@ -9,6 +9,8 @@ runtime: python37
 # See https://cloud.google.com/appengine/docs/standard/#instance_classes
 instance_class: F1
 
+app_engine_apis: true
+
 # Set entrypoint to locate FastAPI app, which is 'application' in module app/main.py
 # Configure gunicorn worker count via --workers arg based on the App Engine instance class
 #   e.g. Set workers = 1 for F1 instance class, workers = 2 for F2, and workers = 4 for F4

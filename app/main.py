@@ -10,7 +10,7 @@ from app.api.endpoints import api_routes
 
 def create_app():
     # Initialize FastAPI app
-    app = FastAPI()
+    app = FastAPI() 
 
     # Enable CORS via middleware
     app.add_middleware(
