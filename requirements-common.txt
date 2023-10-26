@@ -3,3 +3,4 @@ FastAPI==0.68.0
 gunicorn==20.0.4
 starlette==0.14.2
 uvicorn==0.14.0
+requests==2.31.0
