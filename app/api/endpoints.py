@@ -2,6 +2,7 @@
 Primary API route endpoints
 
 """
+import requests
 from fastapi import APIRouter
 from starlette.responses import RedirectResponse
 
