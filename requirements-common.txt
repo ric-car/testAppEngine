@@ -1,5 +1,5 @@
 # Common requirements used across local dev and production
-FastAPI==0.65.2
+FastAPI==0.68.0
 gunicorn==20.0.4
 starlette==0.14.2
-uvicorn==0.11.7
+uvicorn==0.14.0
