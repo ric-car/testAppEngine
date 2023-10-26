@@ -4,7 +4,7 @@ Primary API route endpoints
 """
 from fastapi import APIRouter
 from starlette.responses import RedirectResponse
-
+import requests
 
 # Init FastAPI router for API endpoints
 api_routes = APIRouter()
@@ -17,5 +17,6 @@ def redirect_to_docs():
 
 
 @api_routes.get('/hello/{name}')
-async def get_hello(name: str = 'world'):
-    return dict(hello=name)
+async def get_hello(name: str = 'world')-> dict:
+    response = requests.get('https://httpbin.org/basic-auth/user/pass')
+    return dict(hello=name,code=response.status_code,**response.json())
